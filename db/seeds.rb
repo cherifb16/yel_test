@@ -1,3 +1,5 @@
+require 'faker'
+
 10.times do  |i|
     property = Property.create!(
       name: Faker::Lorem.word,
