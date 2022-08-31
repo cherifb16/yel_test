@@ -1,0 +1,29 @@
+<div class="py-8 bg-white">
+  <div class="lg:text-center">
+    <p class="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl">Property details</p>
+  </div>
+</div>
+<div class="container mx-auto py-3">
+  <div class="mx-auto">  
+
+    <%= render @property %>
+
+    <% if user_signed_in? %>
+      <% if @favorite.present? %>
+        <%= link_to 'Unfavorite', favorite_path(id: @favorite.id), method: :delete, class: 'mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium' %>
+      <% else %>
+        <%= link_to 'Favorite', favorites_path(property_id: @property.id), method: :post, class: 'mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium' %>
+      <% end %>
+    <% end %>
+    <% if partner_signed_in? | admin_signed_in? %>
+      <%= link_to 'Edit this property', edit_property_path(@property), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <div class="inline-block ml-2">
+        <%= button_to 'Destroy this property', property_path(@property), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+      </div>
+    <% end%>
+
+
+    <%= link_to 'Back to properties', properties_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
+</div>
+
