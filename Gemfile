@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.4'
+ruby '3.0.1'
 
 gem 'rails', '~> 6.0.3'
 gem 'pg', '>= 0.18', '< 2.0'
@@ -25,7 +25,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
-
+  gem 'rubocop-faker', '~> 1.1'
   gem "rspec-rails"
   gem "spring-commands-rspec"
   gem "factory_bot_rails"

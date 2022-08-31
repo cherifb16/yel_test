@@ -10,8 +10,6 @@ FactoryBot.define do
     address_2 { 'MyText' }
     price_cents { 'MyString' }
     zip_code { 'MyString' }
-    images { 'MyText' }
-    user { nil }
-    reservation { nil }
+   
   end
 end
