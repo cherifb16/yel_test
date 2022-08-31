@@ -1,11 +1,11 @@
-<%= form_with(model: property, class: "contents") do |form| %>
+<%= form_with(model: property, class: "contents", local: true) do |form| %>
   <% if property.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
 
       <ul>
-        <% property.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% property.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
         <% end %>
       </ul>
     </div>
