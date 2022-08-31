@@ -7,7 +7,8 @@ local:
   root: <%= Rails.root.join("storage") %>
 
 
-
+production:
+  secret_key_base: 06426afe13f7b3e6742d6d5338f8d524c248b365923a80ed618c1ed7af068bc715343cf369c14bb4394ee0d0fc835264a6b12a586944b6a24d31b8d1b2d95ba2
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
 #   service: S3
