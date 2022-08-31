@@ -32,8 +32,8 @@ end
   )
 
   favorite = Favorite.create!(
-    user_id: Faker::Number.between(from: 1, to: 5),
-    property_id: Faker::Number.between(from: 1, to: 10)
+    user_id: rand(1, 5),
+    property_id: rand(1,10)
   )
 
 end
